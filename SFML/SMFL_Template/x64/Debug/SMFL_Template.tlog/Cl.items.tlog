@@ -1,0 +1,12 @@
+C:\dev\git\SFML\SMFL_Template\components.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\components.obj
+C:\dev\git\SFML\SMFL_Template\entity.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\entity.obj
+C:\dev\git\SFML\SMFL_Template\entityManager.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\entityManager.obj
+C:\dev\git\SFML\SMFL_Template\game.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\game.obj
+C:\dev\git\SFML\SMFL_Template\input.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\input.obj
+C:\dev\git\SFML\SMFL_Template\main.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\main.obj
+C:\dev\git\SFML\SMFL_Template\movement.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\movement.obj
+C:\dev\git\SFML\SMFL_Template\multimedia.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\multimedia.obj
+C:\dev\git\SFML\SMFL_Template\random.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\random.obj
+C:\dev\git\SFML\SMFL_Template\timer.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\timer.obj
+C:\dev\git\SFML\SMFL_Template\transform.h;C:\dev\git\SFML\SMFL_Template\x64\Debug\transform.obj
+C:\dev\git\SFML\SMFL_Template\vec2d.cpp;C:\dev\git\SFML\SMFL_Template\x64\Debug\vec2d.obj
