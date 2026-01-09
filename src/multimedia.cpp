@@ -1,11 +1,12 @@
 #include "multimedia.h"
 #include <iostream>
 
-s_Multimedia::s_Multimedia() {
-	sf::Vector2u windowSize(windowWidth, windowHeight);
-	window(sf::VideoMode(windowSize), "Game");
-	event();
-};
+s_Multimedia::s_Multimedia()
+    : window(sf::VideoMode(windowWidth, windowHeight), "Game")
+	, event()
+{
+    
+}
 
 void s_Multimedia::renderEntities(EntityVector entities) {
 	for (Entity_ptr e : entities) {

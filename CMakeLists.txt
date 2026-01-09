@@ -1,22 +1,44 @@
 cmake_minimum_required(VERSION 3.28)
-project(sfml-simple-game-engine LANGUAGES CXX)
+
+project(ecs-game-engine
+    VERSION 0.1.0
+    LANGUAGES CXX
+)
+
+# ----------------------------------
+# Global settings
+# ----------------------------------
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+# ----------------------------------
+# Fetch SFML 2.6.1
+# ----------------------------------
 include(FetchContent)
+
+# Disable unused SFML modules (faster build)
+set(SFML_BUILD_AUDIO FALSE)
+set(SFML_BUILD_NETWORK FALSE)
+set(SFML_BUILD_EXAMPLES FALSE)
+set(SFML_BUILD_DOC FALSE)
+
 FetchContent_Declare(
     SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG 3.0.2
+    GIT_TAG 2.6.1
     GIT_SHALLOW ON
-    EXCLUDE_FROM_ALL
 )
 FetchContent_MakeAvailable(SFML)
 
-# --------------------
-# Engine library
-# --------------------
-add_library(engine
+message(STATUS "Using SFML version: ${SFML_VERSION}")
+
+# ----------------------------------
+# Engine static library
+# ----------------------------------
+add_library(engine STATIC
     src/components.cpp
     src/entity.cpp
     src/entityManager.cpp
@@ -29,8 +51,6 @@ add_library(engine
     src/vec2d.cpp
 )
 
-target_compile_features(engine PUBLIC cxx_std_17)
-
 target_include_directories(engine
     PUBLIC
         ${PROJECT_SOURCE_DIR}/include
@@ -38,19 +58,26 @@ target_include_directories(engine
 
 target_link_libraries(engine
     PUBLIC
-        SFML::System
-        SFML::Window
-        SFML::Graphics
+        sfml-system
+        sfml-window
+        sfml-graphics
 )
 
-# --------------------
+# ----------------------------------
 # Game executable
-# --------------------
+# ----------------------------------
 add_executable(main
     src/main.cpp
 )
 
-target_link_libraries(main PRIVATE engine)
+target_link_libraries(main
+    PRIVATE
+        engine
+)
 
+# ----------------------------------
+# Visual Studio convenience
+# ----------------------------------
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-             PROPERTY VS_STARTUP_PROJECT main)
+    PROPERTY VS_STARTUP_PROJECT main
+)
