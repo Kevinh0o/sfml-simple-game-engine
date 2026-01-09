@@ -1,24 +1,11 @@
 # ESC Game Engine
 
-ESC Game Engine is an **early-stage, experimental game engine** currently under active development.
-It is **not complete** and **not functional yet**.
+ESC Game Engine is an experimental 2D game engine written in C++, focused on engine architecture, systems design, and low-level game development.
 
-At this stage, the project mainly represents the **initial structure and direction** of the engine rather than a usable tool.
+The engine is currently functional and can be built and executed, using an older version of SFML.
+While usable, the project is still early-stage and under active development.
 
----
-
-## 🚧 Project Status
-
-⚠ **Important:**
-The engine **does not currently work**.
-
-This is expected.
-
-The main blocker right now is:
-
-* The engine depends on **SFML**, and the project needs to be updated to a newer compatible **SFML version** before it can build and run correctly.
-
-Until that update is completed, the engine should be considered **non-runnable**.
+![ESC Game Engine Demo](assets/demo.gif)
 
 ---
 
@@ -40,23 +27,51 @@ These features are **planned**, not yet implemented.
 
 * **Language:** C++
 * **Graphics / Windowing:** SFML (version update required)
-* **Build System:** *To be finalized*
-
----
-
-## 🚀 Quick Start
-
-> ⚠ **Not available yet**
-
-The engine cannot be built or run at this time due to SFML compatibility issues.
-A working quick-start guide will be added once the SFML update and core systems are in place.
 
 ---
 
 ## 📌 Roadmap (Short-Term)
 
-* [ ] Update SFML to a supported version
-* [ ] Ensure the project builds successfully
-* [ ] Create a game loop
+* [ ] Update SFML to 3.0+
 * [ ] Create sprite importing features
+* [ ] Physics implementation
 * [ ] Initial documentation
+
+---
+
+# Build Guide – ESC Game Engine
+
+This document explains how to build and run **ESC Game Engine** on **Windows** using **CMake** and **Visual Studio**.
+
+The engine is currently **functional** and depends on an **older version of SFML**.
+
+---
+
+## 🖥 Requirements
+
+- **Windows 10 / 11**
+- **Visual Studio 2022**
+  - Workload: *Desktop development with C++*
+- **CMake 3.20+**
+- **SFML (older supported version)**
+
+> ⚠ The engine will not build with newer SFML versions yet.  
+> Updating SFML is tracked in `TODO.md`.
+
+---
+
+## 📁 Project Layout (Simplified)
+
+ESC-Game-Engine/
+├── CMakeLists.txt
+├── src/
+├── include/
+├── external/
+│ └── SFML/
+├── build/ (generated)
+
+---
+
+## 🧱 How to build
+
+Running the engine with releasse target in visual studio
